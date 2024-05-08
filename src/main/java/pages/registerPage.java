@@ -21,11 +21,11 @@ public class registerPage {
         this.driver=driver;
     }
 
-    public void enterRegisterationData(){
-        driver.findElement(firstNameTxt).sendKeys("khaled");
-        driver.findElement(lastNameTxt).sendKeys("hesham");
-        driver.findElement(emailTxt).sendKeys("kh10@gmail.com");
-        driver.findElement(passwordTxt).sendKeys("123456");
+    public void enterRegisterationData(String firstName, String lastName, String email, String password){
+        driver.findElement(firstNameTxt).sendKeys(firstName);
+        driver.findElement(lastNameTxt).sendKeys(lastName);
+        driver.findElement(emailTxt).sendKeys(email);
+        driver.findElement(passwordTxt).sendKeys(password);
         driver.findElement(gender).click();
         driver.findElement(submitButton).click();
     }

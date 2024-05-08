@@ -1,22 +1,29 @@
 package tests;
 
+import org.json.simple.parser.ParseException;
 import org.testng.annotations.Test;
 import pages.contactUsPage;
 import pages.homePage;
-import pages.registerPage;
+import data.contactUsData;
+
+import java.io.IOException;
+
 
 public class contactUsTest extends testBase{
-    registerPage register;
+
     contactUsPage contact;
     homePage home;
 
 
-    @Test
-    public void validateContact() throws InterruptedException {
+    @Test(description = "Validate that the user can contact successfully ")
+    public void validateContact() throws InterruptedException, IOException, ParseException {
         home=new homePage(driver);
         home.navigateToContactPage();
         contact=new contactUsPage(driver);
-        contact.enterContactData();
+        contactUsData data=new contactUsData();
+        data.ContactUsData();
+        contact.enterContactData(
+                data.mobile,data.subject,data.message);
     }
 
 }

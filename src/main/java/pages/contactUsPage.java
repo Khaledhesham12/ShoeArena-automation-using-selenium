@@ -14,19 +14,18 @@ public class contactUsPage {
     Select select;
 
     private final By mobileTxt = By.id("contact-mobile");
-    private final By messegeTxt = By.id("contact-enquiry");
+    private final By messageTxt = By.id("contact-enquiry");
     private final By subjectForm = By.id("contact-subject");
     private final By submitButton = By.name("submit");
     public contactUsPage(WebDriver driver){
         this.driver=driver;
     }
 
-    public void enterContactData(){
-        driver.findElement(mobileTxt).sendKeys("01147690862");
-        driver.findElement(mobileTxt).sendKeys("jkgdk");
+    public void enterContactData(String mobile, String subject, String message){
+        driver.findElement(mobileTxt).sendKeys(mobile);
         select =new Select(driver.findElement(subjectForm));
-        select.selectByVisibleText(" Returns ");
-        driver.findElement(messegeTxt).sendKeys("kakakkakaka");
+        select.selectByVisibleText(subject);
+        driver.findElement(messageTxt).sendKeys(message);
         driver.findElement(submitButton).click();
     }
 }

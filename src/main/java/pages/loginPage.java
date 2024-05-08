@@ -18,11 +18,11 @@ public class loginPage {
         this.driver=driver;
     }
 
-    public void enterLoginData(){
+    public void enterLoginData(String email,String password){
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(emailTxt)));
-        driver.findElement(emailTxt).sendKeys("kh@gmail.com");
-        driver.findElement(passwordTxt).sendKeys("123456");
+        driver.findElement(emailTxt).sendKeys(email);
+        driver.findElement(passwordTxt).sendKeys(password);
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(signInButton)));
         driver.findElement(signInButton).click();
     }

@@ -2,6 +2,7 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class testBase {
@@ -12,8 +13,8 @@ public class testBase {
         driver.manage().window().maximize();
         driver.navigate().to("https://www.shoearena.sa/en");
     }
-    /*@AfterClass
+    @AfterClass
     public void afterClass(){
         driver.quit();
-    }*/
+    }
 }
